@@ -10,8 +10,9 @@ import GiaoVien.frmGiaoVien;
 import Khoa.frmKhoa;
 import LopHoc.frmLopHoc;
 import MonHoc.frmMonHoc;
-import SinhVien.frmSinhVien;
 import Search.Search;
+import SinhVien.frmSinhVien;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -119,8 +120,10 @@ public class Main extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         jmiNhapKhoa = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
+        jmTimKiem = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MARK SYSTEM MANAGER -  TRAN VAN TUYEN - MASV: B103104290 - LOP: L10CQCN4 - KHOA CNTT - HOC VIEN CONG NGHE BUU CHINH VIEN THONG");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
@@ -577,6 +580,20 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar2.add(jmTacVu);
 
+        jmTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Search-icon.png"))); // NOI18N
+        jmTimKiem.setText("Search                ");
+        jmTimKiem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jmTimKiemMouseClicked(evt);
+            }
+        });
+        jmTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmTimKiemActionPerformed(evt);
+            }
+        });
+        jMenuBar2.add(jmTimKiem);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -699,17 +716,24 @@ public class Main extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_jmiLogOffActionPerformed
 
+    private void jmTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmTimKiemActionPerformed
+        Search timkiem = new Search();
+        jtpContent.removeAll();
+        jtpContent.add("Tìm Kiếm", timkiem);
+    }//GEN-LAST:event_jmTimKiemActionPerformed
+
+    private void jmTimKiemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmTimKiemMouseClicked
+        Search timkiem = new Search();
+        jtpContent.removeAll();
+        jtpContent.add("Tìm Kiếm", timkiem);
+    }//GEN-LAST:event_jmTimKiemMouseClicked
+
     private void jbtinhdiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtinhdiemActionPerformed
         frmTinhDiem tinhDiem = new frmTinhDiem();
         jtpContent.removeAll();
         jtpContent.add("Tính Điểm",tinhDiem);
     }//GEN-LAST:event_jbtinhdiemActionPerformed
-                                          
-    private void jmTimKiemMouseClicked(java.awt.event.MouseEvent evt) {                                       
-        Search timkiem = new Search();
-        jtpContent.removeAll();
-        jtpContent.add("Tìm Kiếm", timkiem);
-    }
+
     /**
      * @param args the command line arguments
      */
@@ -788,6 +812,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jlbUser;
     private javax.swing.JMenu jmHeThong;
     private javax.swing.JMenu jmTacVu;
+    private javax.swing.JMenu jmTimKiem;
     private javax.swing.JMenuItem jmiExit;
     private javax.swing.JMenuItem jmiLogOff;
     private javax.swing.JMenuItem jmiMonHoc;

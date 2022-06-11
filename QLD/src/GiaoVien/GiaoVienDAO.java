@@ -5,6 +5,8 @@
 package GiaoVien;
 
 import ConnectDatabase.DBConnect;
+import MonHoc.MonHoc;
+import MonHoc.MonHocDAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

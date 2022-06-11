@@ -5,6 +5,7 @@
 package Khoa;
 
 import Check.Check;
+import GiaoVien.frmGiaoVien;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Vector;
